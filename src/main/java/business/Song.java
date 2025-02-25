@@ -5,5 +5,9 @@ package business;
  * @author michelle contributed by cal woods
  */
 public class Song {
+    //attributes
+    private String artist;
+    private String title;
+
     
 }
