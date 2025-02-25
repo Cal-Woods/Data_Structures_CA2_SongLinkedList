@@ -54,4 +54,15 @@ public class Song {
         
         this.artist = artist;
     }
+
+    /**
+     * Sets title instance attribute to given title.
+     * @param title Given title
+     */
+    public void setTitle(String title) {
+        //Validation
+        if(title.isBlank()) throw new IllegalArgumentException("Please check given title argument as it may be empty or contain only spaces, NOT allowed!");
+        
+        this.title = title;
+    }
 }
