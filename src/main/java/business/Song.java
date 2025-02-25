@@ -9,9 +9,8 @@ public class Song {
     private String artist;
     private String title;
 
-    //constructor - no argument
     /**
-     * 
+     * Does not take any arguments and sets new Song attributes to artist, "Joe Bloggs" & title, "Mmmbop".
      */
     public Song() {
         //Set class attributes to defaults "Joe Bloggs", "Mmmbop" respectively
@@ -19,10 +18,17 @@ public class Song {
         this.title = "Mmmbop";
     }
 
+    /**
+     * Sets new Song attributes to given artist & title.
+     * @param artist Given artist name String
+     * @param title Given title of song String
+     * 
+     * @throws IllegalArgumentException If given artist or title is empty/contains only spaces.
+     */
     public Song(String artist, String title) {
         //Validation
-        if(artist.isBlank() || title.isBlank()) throw new IllegalArgumentException("Given artist/title must NOT be empty or contain only spaces!");
-        
+        if(artist.isBlank() || title.isBlank()) throw new IllegalArgumentException("Given artist/title may be empty or have only space. Arguments must NOT be empty or contain only spaces!");
+
         //Set attributes to arguments
         this.artist = artist;
         this.title = title;
