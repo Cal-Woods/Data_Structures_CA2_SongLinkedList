@@ -42,4 +42,16 @@ public class Song {
     public String getTitle() {
         return this.title;
     }
+
+    //Setters
+    /**
+     * Sets artist attribute to given artist argument.
+     * @param artist Given artist
+     */
+    public void setArtist(String artist) {
+        //Validation
+        if(artist.isBlank()) throw new IllegalArgumentException("Please check given artist argument as it may be empty or contain only spaces!");
+        
+        this.artist = artist;
+    }
 }
