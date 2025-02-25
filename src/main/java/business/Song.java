@@ -33,4 +33,13 @@ public class Song {
         this.artist = artist;
         this.title = title;
     }
+
+    //Getters
+    public String getArtist() {
+        return this.artist;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
 }
