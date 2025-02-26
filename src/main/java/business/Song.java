@@ -1,5 +1,7 @@
 package business;
 
+import java.util.Objects;
+
 /**
  * Represents a song artist & title. Contains two attributes & getters/setters.
  * @author michelle contributed by cal woods
@@ -65,4 +67,26 @@ public class Song {
         
         this.title = title;
     }
+
+
+    //Override methods: 'hashCode()', 'toString()' & 'equals()'
+    /**
+     * Generates a hashcode using Song instance attributes.
+     * 
+     */
+    @Override
+    public int hashCode() {
+        //Declare int hash to store attribute hashes
+        int hash = 0;
+
+        //Compute hash using 'Objects.hash' method on Song attributes
+        hash += Objects.hash(this.artist);
+        hash += Objects.hash(this.title);
+
+        //Multiply hash by prime number '17'
+        hash *= 17;
+
+        return hash;
+    }
+
 }
