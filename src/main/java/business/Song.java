@@ -86,6 +86,12 @@ public class Song {
         return hash;
     }
 
+    /**
+     * Compares each attribute of two Song classes to see if this instance is identical
+     * to given Object, should be another Song object.
+     * 
+     * @return boolean representing whether two Object instances have matching attribute names/values
+     */
     @Override
     public boolean equals(Object o) {
         //Validation
@@ -105,6 +111,11 @@ public class Song {
         return true;
     }
 
+    /**
+     * Gives a String in the form of a table that shows instance attribute values.
+     * 
+     * @return A String representation of all instance attributes in a table-like format
+     */
     @Override
     public String toString() {
         //Return a nicely-formatted table, containing each attribute.
