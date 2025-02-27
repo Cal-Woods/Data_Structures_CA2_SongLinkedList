@@ -29,6 +29,17 @@ public class LinkedList {
         this.numElements = 0;
     }
 
+    //'size()' method
+
+    /**
+     * Gets current number of elements in instance.
+     * 
+     * @return number of elements in this instance
+     */
+    public int size() {
+        return this.numElements;
+    }
+
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
         //Attributes of 'Node'
