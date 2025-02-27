@@ -77,14 +77,11 @@ public class Song {
     @Override
     public int hashCode() {
         //Declare int hash to store attribute hashes
-        int hash = 0;
+        int hash = 17;
 
-        //Compute hash using 'Objects.hash' method on Song attributes
-        hash += Objects.hash(this.artist);
-        hash += Objects.hash(this.title);
-
-        //Multiply hash by prime number '17'
-        hash *= 17;
+        //Compute hash using 13 * 'Objects.hash' method on each Song attribute
+        hash += 13 * Objects.hash(this.artist);
+        hash += 13 * Objects.hash(this.title);
 
         return hash;
     }
