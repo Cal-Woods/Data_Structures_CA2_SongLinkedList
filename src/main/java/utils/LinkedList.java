@@ -40,6 +40,16 @@ public class LinkedList {
         return this.numElements;
     }
 
+    /**
+     * States a boolean to say if instance is empty.
+     * 
+     * @return boolean if this instance has a count of 0 elements
+     */
+    public boolean isEmpty() {
+        //Returning boolean result of stating below statement
+        return this.numElements == 0;
+    }
+
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
         //Attributes of 'Node'
