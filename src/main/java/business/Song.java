@@ -89,4 +89,22 @@ public class Song {
         return hash;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        //Validation
+        if(!(o instanceof Song)) return false;
+        
+        //Store copy of Song o cast as Song
+        Song copy = (Song) o;
+
+        //Check if instance attributes are the same as given o attributes using copy
+        if(!this.artist.equalsIgnoreCase(copy.getArtist())) {
+            return false;
+        }
+        if(!this.title.equalsIgnoreCase(copy.getTitle())) {
+            return false;
+        }
+
+        return true;
+    }
 }
