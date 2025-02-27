@@ -104,4 +104,10 @@ public class Song {
 
         return true;
     }
+
+    @Override
+    public String toString() {
+        //Return a nicely-formatted table, containing each attribute.
+        return "\nArtist: "+this.artist+"\nTitle: "+this.title+"\n";
+    }
 }
