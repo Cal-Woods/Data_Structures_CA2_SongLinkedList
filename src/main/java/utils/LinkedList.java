@@ -35,5 +35,16 @@ public class LinkedList {
         private Node prev;
         private Node next;
         private Song data;
+
+        //Constructor with Song data
+        public Node(Song data) {
+            //Validation
+            if(data == null) throw new IllegalArgumentException("Given Song data was null. This is NOT allowed here!");
+            
+            //Initialise attributes
+            this.prev = null;
+            this.next = null;
+            this.data = data;
+        }
     }
 }
