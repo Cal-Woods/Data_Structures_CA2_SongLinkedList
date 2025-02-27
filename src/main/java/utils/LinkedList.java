@@ -19,6 +19,10 @@ public class LinkedList {
     
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
+        //Attributes of 'Node'
+        private Node prev;
+        private Node next;
+
         
     }
 }
