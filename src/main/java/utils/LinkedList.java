@@ -2,7 +2,7 @@ package utils;
 
 /**
  *
- * @author michelle
+ * @author michelle contributed by cal woods
  */
 public class LinkedList {
     
