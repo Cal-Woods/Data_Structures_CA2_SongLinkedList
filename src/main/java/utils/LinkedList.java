@@ -101,6 +101,34 @@ public class LinkedList {
         this.numElements++;
     }
 
+    /**
+     * Searches instance for an element with a matching Song object.
+     * 
+     * @param data A Song object to search for in instance
+     * 
+     * @return Position of element or -1 if element is NOT there
+     */
+    public int indexOf(Song data) {
+        //Validation
+        if(this.first == null) return -1;
+
+        //Declare Node current
+        Node current = this.first;
+        
+        //Initialise for loop to search LinkedList
+        for(int i = 0; i < numElements; i++) {
+            //Check if current.data is the same as given data
+            if(current.data.equals(data)) {
+                return i;
+            }
+
+            //Move current to next element
+            current = current.next;
+        }
+
+        return -1;
+    }
+
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
         //Attributes of 'Node'
