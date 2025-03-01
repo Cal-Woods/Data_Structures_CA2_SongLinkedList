@@ -80,27 +80,27 @@ public class LinkedList {
 
         //Check if first is null, then 
         if(this.first == null) {
+
             //Set first to insert
             this.first = insert;
+
             //Set last to insert as list has no elements
             this.last = insert;
         }
         //Otherwise, first is NOT null
         else {
-            //Set insert.prev to this.last
-            insert.prev = this.last;
-            
-            //Set insert.next to insert
-            insert.next = insert;
+            //Set last.prev to last
+            last.prev = last;
 
-            //Set last to insert
+            //Set last & last.next to insert
+            this.last.next = insert;
             this.last = insert;
         }
 
         //Increment numElements by 1
         this.numElements++;
     }
-    
+
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
         //Attributes of 'Node'
