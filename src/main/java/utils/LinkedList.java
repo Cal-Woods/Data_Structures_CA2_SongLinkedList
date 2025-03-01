@@ -43,11 +43,20 @@ public class LinkedList {
     /**
      * States a boolean to say if instance is empty.
      * 
-     * @return boolean if this instance has a count of 0 elements
+     * @return boolean true if this instance has a count of 0 elements
      */
     public boolean isEmpty() {
         //Returning boolean result of stating below statement
         return this.numElements == 0;
+    }
+
+    /**
+     * Gets the last element's Song in instance LinkedList.
+     * 
+     * @return The last element's data Song object
+     */
+    public Song tail() {
+        return this.last.data;
     }
 
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
