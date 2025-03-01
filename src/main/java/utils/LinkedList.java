@@ -58,12 +58,49 @@ public class LinkedList {
      * @return The last element's data Song object
      */
     public Song tail() {
-        //Check if this.last.data is null
+        //Check if this.last is null
         if(this.last == null) throw new NoSuchElementException("This list's 'last' element does NOT exist. this method 'tail()' will NOT work in this case.");
-        
+
         return this.last.data;
     }
 
+    /**
+     * Adds a new element to end of instance list.
+     * @param data A new Song object
+     * 
+     * 
+     * 
+     * @throws IllegalArgumentException by internal class If Song object is null.
+     */
+    public void add(Song data) {
+        //Validation - None required as Node constructor checks for null data
+
+        //Declare a Node object to store data & possibly previous object
+        Node insert = new Node(data);
+
+        //Check if first is null, then 
+        if(this.first == null) {
+            //Set first to insert
+            this.first = insert;
+            //Set last to insert as list has no elements
+            this.last = insert;
+        }
+        //Otherwise, first is NOT null
+        else {
+            //Set insert.prev to this.last
+            insert.prev = this.last;
+            
+            //Set insert.next to insert
+            insert.next = insert;
+
+            //Set last to insert
+            this.last = insert;
+        }
+
+        //Increment numElements by 1
+        this.numElements++;
+    }
+    
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
         //Attributes of 'Node'
