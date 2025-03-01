@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.NoSuchElementException;
+
 import business.Song;
 
 /**
@@ -56,6 +58,9 @@ public class LinkedList {
      * @return The last element's data Song object
      */
     public Song tail() {
+        //Check if this.last.data is null
+        if(this.last == null) throw new NoSuchElementException("This list's 'last' element does NOT exist. this method 'tail()' will NOT work in this case.");
+        
         return this.last.data;
     }
 
