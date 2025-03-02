@@ -61,4 +61,16 @@ public class LinkedListExtraTests {
         assertEquals(expected1, actual1);
         assertEquals(expected2, actual2);
     }
+
+
+    @Test
+    public void testAddDuplicateValueToPopulatedListThrowsIllegalArgumentException() {
+        LinkedList list = new LinkedList();
+
+        Song value = new Song("cal", "Is the best coder/programmer");
+
+        list.add(value);
+
+        assertThrows(IllegalArgumentException.class, () -> {list.add(value);});
+    }
 }
