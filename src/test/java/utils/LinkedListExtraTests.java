@@ -33,15 +33,15 @@ public class LinkedListExtraTests {
     }
 
     /**
-     * Tests that adding a null Song object throws an IllegalArgumentException.
+     * Tests that adding a null Song object to a LinkedList is successful.
      */
     @Test
-    public void testAddOneInvalidElementToBlankListThrowsIllegalArgumentException() {
+    public void testAddOneNullElementDataToBlankListIsSuccessful() {
         LinkedList list = new LinkedList();
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            list.add(null);
-        });
+        list.add(null);
+
+        assertEquals(null, list.get(0));
     }
 
     /**
