@@ -73,8 +73,9 @@ public class LinkedList {
      * @throws IllegalArgumentException by internal class If Song object is null.
      */
     public void add(Song data) {
-        //Validation - None required as Node constructor checks for null data
-
+        //Validation - Check if data is duplicate to other values, using private static, internal method 'isDuplicate(LinkedList list, Song data)'
+        if(LinkedList.isDuplicate(this, data)) throw new IllegalArgumentException("A duplicate value was found in provided LinkedList, so data cannot be added.");
+        
         //Declare a Node object to store data & possibly previous object
         Node insert = new Node(data);
 
@@ -146,6 +147,27 @@ public class LinkedList {
 
         //return current element's Song object
         return current.data;
+    }
+
+
+    //Private static method
+    private static boolean isDuplicate(LinkedList list,Song data) {
+        //Validation - none required
+
+        //Declare current element reference to start at first
+        Node current = list.first;
+
+        for (int i = 0; i < list.numElements; i++) {
+            //Check if current data in list is equal to given data
+            if(current.data.equals(data)) {
+                return true;
+            }
+
+            //Move current to next
+            current = current.next;
+        }
+
+        return false;
     }
 
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
