@@ -116,6 +116,11 @@ public class LinkedList {
         
         //Initialise for loop to search LinkedList
         for(int i = 0; i < numElements; i++) {
+            //Check if current.data is null AND given data is null, to account for searching a null value
+            if(data == null && current.data == null) {
+                return i;
+            }
+
             //Check if current.data is the same as given data
             if(current.data.equals(data)) {
                 return i;
