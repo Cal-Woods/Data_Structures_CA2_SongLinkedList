@@ -129,6 +129,25 @@ public class LinkedList {
         return -1;
     }
 
+
+    public Song get(int index) {
+        //Validation
+        if(index < 0 || index >= this.numElements) throw new IndexOutOfBoundsException("The given index was less than 0 or greater than the actual size of the instance list, ONLY provide a value between 0 & the maximum number of elements - 1. Use 'size()' method to check.");
+        if(this.isEmpty()) return null;
+        
+        //Declare Node current to track current Node
+        Node current = this.first;
+
+        //Initialise for loop to search list until given index
+        for (int i = 0; i < index; i++) {
+            //Move current to next
+            current = current.next;
+        }
+
+        //return current element's Song object
+        return current.data;
+    }
+
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
     private static class Node {
         //Attributes of 'Node'
