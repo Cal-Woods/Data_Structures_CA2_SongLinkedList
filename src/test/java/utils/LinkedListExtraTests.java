@@ -42,6 +42,7 @@ public class LinkedListExtraTests {
         list.add(null);
 
         assertEquals(null, list.get(0));
+        assertEquals(0, list.indexOf(null));
     }
 
     /**
@@ -53,7 +54,7 @@ public class LinkedListExtraTests {
 
         list.add(new Song("Eminem", "Sing for The Moment"));
         list.add(new Song("Frank Sinatra", "My Way"));
-
+        
         Song expected1 = new Song("Eminem", "Sing for The Moment"), expected2 = new Song("Frank Sinatra", "My Way");
         Song actual1 = list.get(0), actual2 = list.get(1);
 
