@@ -68,9 +68,8 @@ public class LinkedList {
      * Adds a new element to end of instance list.
      * @param data A new Song object
      * 
-     * 
-     * 
-     * @throws IllegalArgumentException by internal class If Song object is null.
+     * @throws IllegalArgumentException by Song class If Song object is null.
+     * @throws IllegalArgumentException If a duplicate Song object was found in instance.
      */
     public void add(Song data) {
         //Validation - Check if data is duplicate to other values, using private static, internal method 'isDuplicate(LinkedList list, Song data)'
