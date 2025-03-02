@@ -43,4 +43,21 @@ public class LinkedListExtraTests {
             list.add(null);
         });
     }
+
+    /**
+     * Tests that more than one added element are in the correct places.
+     */
+    @Test
+    public void testAddMoreThanOneValidElementIsSuccessfullyAddedInCorrectPlaces() {
+        LinkedList list = new LinkedList();
+
+        list.add(new Song("Eminem", "Sing for The Moment"));
+        list.add(new Song("Frank Sinatra", "My Way"));
+
+        Song expected1 = new Song("Eminem", "Sing for The Moment"), expected2 = new Song("Frank Sinatra", "My Way");
+        Song actual1 = list.get(0), actual2 = list.get(1);
+
+        assertEquals(expected1, actual1);
+        assertEquals(expected2, actual2);
+    }
 }
