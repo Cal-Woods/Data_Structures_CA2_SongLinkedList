@@ -90,7 +90,7 @@ public class LinkedList {
         //Otherwise, first is NOT null
         else {
             //Set last.prev to last
-            last.prev = last;
+            this.last.prev = last;
 
             //Set last & last.next to insert
             this.last.next = insert;
