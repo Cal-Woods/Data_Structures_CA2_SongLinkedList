@@ -68,7 +68,6 @@ public class LinkedList {
      * Adds a new element to end of instance list.
      * @param data A new Song object
      * 
-     * @throws IllegalArgumentException by Node class If Song object is null.
      * @throws IllegalArgumentException If a duplicate Song object was found in instance.
      */
     public void add(Song data) {
@@ -170,6 +169,9 @@ public class LinkedList {
     }
 
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
+    /**
+     * An internal wrapper class for provided Song objects that are stored in a LinkedList.
+     */
     private static class Node {
         //Attributes of 'Node'
         private Node prev;
@@ -177,10 +179,13 @@ public class LinkedList {
         private Song data;
 
         //Constructor with Song data
+        /**
+         * Takes a Song data and adds it as data to a new Node.
+         * @param data A Song object
+         */
         public Node(Song data) {
-            //Validation
-            if(data == null) throw new IllegalArgumentException("Given Song data was null. This is NOT allowed here!");
-            
+            //Validation - None required as I am allowing nulls
+
             //Initialise attributes
             this.prev = null;
             this.next = null;
