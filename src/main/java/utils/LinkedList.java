@@ -130,7 +130,7 @@ public class LinkedList {
             //Move current to next element
             current = current.next;
         }
-        
+
         return -1;
     }
 
@@ -170,6 +170,19 @@ public class LinkedList {
         }
             
         return false;
+    }
+
+    public void addAll(Song[] data) {
+        //Validation
+        //Null Song objects are allowed but a null Song array is NOT
+        if(data == null) throw new IllegalArgumentException("Given Song array 'data' is null");
+        if(data.length == 0) return;
+
+        //Initialise for loop add each element in 'data' to list
+        for(int i = 0; i < data.length; i++) {
+            //Call add() method for each piece of data
+            add(data[i]);
+        }
     }
 
     //Declare private static subclass 'Node' to contain reference to next Node and reference to prev Node
