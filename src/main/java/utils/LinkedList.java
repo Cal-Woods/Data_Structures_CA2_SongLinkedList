@@ -116,20 +116,21 @@ public class LinkedList {
         
         //Initialise for loop to search LinkedList
         for(int i = 0; i < numElements; i++) {
-            //Check if current.data is null AND given data is null, to account for searching a null value
-            if(data == null && current.data == null) {
+            //Check if current data in list is equal to given data - two ways
+            if(current.data == null) {
+                if(data == null)
                 return i;
             }
 
-            //Check if current.data is the same as given data
-            if(current.data.equals(data)) {
+            //Else check if current.data is the same as given data
+            else if(current.data.equals(data)) {
                 return i;
             }
 
             //Move current to next element
             current = current.next;
         }
-
+        
         return -1;
     }
 
@@ -152,16 +153,14 @@ public class LinkedList {
         return current.data;
     }
 
-
     //Private static method
-    private static boolean isDuplicate(LinkedList list,Song data) {
+    private static boolean isDuplicate(LinkedList list, Song data) {
         //Validation - none required
 
         //Declare current element reference to start at first
         Node current = list.first;
 
-        for (int i = 0; i < list.numElements; i++) {
-            //Check if current data in list is equal to given data
+        for (int i = 0; i < list.numElements; i++) {            
             if(current.data.equals(data)) {
                 return true;
             }
@@ -169,7 +168,7 @@ public class LinkedList {
             //Move current to next
             current = current.next;
         }
-
+            
         return false;
     }
 
