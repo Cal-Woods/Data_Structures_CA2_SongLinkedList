@@ -18,7 +18,7 @@ public class LinkedListExtraTests {
     //Cal's code from here
 
     /**
-     * Tests adding one element to a list is at the correct index
+     * Tests adding one element to a list is at the correct index.
      */
     @Test
     public void testAddOneValidElementToBlankListIsThereWithGetPos0() {
@@ -66,7 +66,9 @@ public class LinkedListExtraTests {
         assertEquals(expected2, actual2);
     }
 
-
+    /**
+     * Tests adding one element to list correctly updates size of list.
+     */
     @Test
     public void testAddOneElementChangesNumElementsFromZeroToOne() {
         LinkedList list = new LinkedList();
@@ -78,6 +80,9 @@ public class LinkedListExtraTests {
         assertEquals(1, list.size());
     }
 
+    /**
+     * Tests adding four elements to LinkedList correctly updates size.
+     */
     @Test
     public void testAddFourElementsChangesNumElementsFromZeroToFour() {
         LinkedList list = new LinkedList();
@@ -92,6 +97,9 @@ public class LinkedListExtraTests {
         assertEquals(4, list.size());
     }
 
+    /**
+     * Tests addAll() method of LinkedList by seeing if null input throws IllegalArgumentException.
+     */
     @Test
     public void testAddAllWithNullArrayThrowsIllegalArgumentException() {
         LinkedList list = new LinkedList();
@@ -101,6 +109,9 @@ public class LinkedListExtraTests {
         });
     }
 
+    /**
+     * Tests that using LinkedList addAll() updates size of instance correctly.
+     */
     @Test
     public void testAddAllWithValidSongArrayThatSizeChangesCorrectly() {
         LinkedList list = new LinkedList();
@@ -115,7 +126,10 @@ public class LinkedListExtraTests {
 
         assertEquals(4, list.size());
     }
-
+    
+    /**
+     * Tests that Song objects are inserted into LinkedList instance correctly.
+     */
     @Test
     public void testAddAllWithArrayWithANullAndOtherSongsAreAllInCorrectPlaces() {
         LinkedList list = new LinkedList();
