@@ -68,13 +68,27 @@ public class LinkedListExtraTests {
 
 
     @Test
-    public void testAddDuplicateValueToPopulatedListThrowsIllegalArgumentException() {
+    public void testAddOneElementChangesNumElementsFromZeroToOne() {
         LinkedList list = new LinkedList();
 
-        Song value = new Song("cal", "Is the best coder/programmer");
+        assertEquals(0, list.size());
 
-        list.add(value);
+        list.add(new Song());
+        
+        assertEquals(1, list.size());
+    }
 
-        assertThrows(IllegalArgumentException.class, () -> {list.add(value);});
+    @Test
+    public void testAddFourElementsChangesNumElementsFromZeroToFour() {
+        LinkedList list = new LinkedList();
+
+        assertEquals(0, list.size());
+
+        list.add(new Song());
+        list.add(null);
+        list.add(new Song("One Republic", "Counting Stars"));
+        list.add(new Song("NF", "The Search"));
+        
+        assertEquals(4, list.size());
     }
 }
