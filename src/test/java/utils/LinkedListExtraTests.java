@@ -100,4 +100,19 @@ public class LinkedListExtraTests {
             list.addAll(null);
         });
     }
+
+    @Test
+    public void testAddAllWithValidSongArrayThatSizeChangesCorrectly() {
+        LinkedList list = new LinkedList();
+
+        list.size();
+
+        assertEquals(0, list.size());
+
+        Song[] data = {new Song("Bruno Mars", "Uptown Funk"), new Song("Kanye West", "Power"), new Song("Akon Ft Eminem", "Smack That"), new Song("Taylor Swift", "Shake It Off")};
+
+        list.addAll(data);
+
+        assertEquals(4, list.size());
+    }
 }
