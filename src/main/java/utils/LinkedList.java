@@ -160,8 +160,15 @@ public class LinkedList {
         //Declare current element reference to start at first
         Node current = list.first;
 
-        for (int i = 0; i < list.numElements; i++) {            
-            if(current.data.equals(data)) {
+        for (int i = 0; i < list.numElements; i++) {  
+            //Two checks required to handle null & non-null
+            if(current.data == null) {
+                if(data == null) {
+                    return true;
+                }
+            }
+            
+            else if(current.data.equals(data)) {
                 return true;
             }
 
