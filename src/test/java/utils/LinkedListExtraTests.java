@@ -91,4 +91,13 @@ public class LinkedListExtraTests {
         
         assertEquals(4, list.size());
     }
+
+    @Test
+    public void testAddAllWithNullArrayThrowsIllegalArgumentException() {
+        LinkedList list = new LinkedList();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.addAll(null);
+        });
+    }
 }
