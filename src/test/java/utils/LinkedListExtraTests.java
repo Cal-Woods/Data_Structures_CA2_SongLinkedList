@@ -115,4 +115,18 @@ public class LinkedListExtraTests {
 
         assertEquals(4, list.size());
     }
+
+    @Test
+    public void testAddAllWithArrayWithANullAndOtherSongsAreAllInCorrectPlaces() {
+        LinkedList list = new LinkedList();
+
+        Song[] data = {null, new Song("Garth Brooks", "Standing Outside The Fire"), new Song("Billy Ocean", "Love Really Hurts Without You")};
+
+        list.addAll(data);
+
+        //Tests
+        assertEquals(null, list.get(0));
+        assertEquals(new Song("Garth Brooks", "standing outside the fire"), list.get(1));
+        assertEquals(new Song("billy ocean", "love Really hurts wIthout YOU"), list.get(2));
+    }
 }
