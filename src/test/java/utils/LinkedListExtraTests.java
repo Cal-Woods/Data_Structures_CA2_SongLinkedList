@@ -26,10 +26,14 @@ public class LinkedListExtraTests {
 
         list.add(new Song("Eminem", "Lose Yourself"));
 
-        Song expected = new Song("Eminem", "Lose Yourself");
-        Song actual = list.get(0);
+        //Tests
+        Song expected1 = new Song("Eminem", "Lose Yourself"), actual1 = list.get(0);
+        int expected2 = 0, actual2 = list.indexOf(new Song("Eminem", "Lose Yourself"));
+        
+        //Implement tests
+        assertEquals(expected1, actual1);
+        assertEquals(expected2, actual2);
 
-        assertEquals(expected, actual);
     }
 
     /**
